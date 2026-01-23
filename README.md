@@ -1,108 +1,96 @@
-# Campus Lost & Found
+Campus Lost & Found
 
-Campus Lost & Found is a full-stack MERN web application that helps college students report, search, and claim lost or found items through a centralized and secure platform.
+Campus Lost & Found is a full-stack MERN web application designed to help college students report, search, and claim lost or found items through a centralized, secure, and structured platform.
+The project emphasizes real-world backend engineering practices including authentication, authorization, secure file handling, REST API design, and cloud storage integration, making it suitable as a production-ready portfolio project.
 
-The project focuses on real-world backend functionality such as authentication, access control, image uploads, and database design, making it suitable as a production-ready portfolio project.
+Project Motivation
 
+Lost and found processes in many campuses are informal, unstructured, and inefficient. Students often rely on word of mouth or social media posts, which leads to delays and unsuccessful recoveries.
+This project addresses that gap by providing a structured digital system where students can securely report and track lost or found items while ensuring proper access control and data management.
 
-## 🎯 Why This Project?
+Key Features
 
-Lost and found systems in colleges are often informal and inefficient.
-This project was built to solve a real campus problem while practicing
-secure backend development, authentication workflows, and file handling
-in a full-stack environment.
+Student authentication using JWT
+Protected dashboard for authenticated users
+Add lost or found items with image upload support
+Search and filter functionality across all items
+Authorization rules allowing users to edit or delete only their own posts
+Claim mechanism through a contact form
+Secure management of credentials using environment variables
 
+System Architecture
 
-## 🚀 Features
+The application follows a standard client–server architecture.
+The frontend is built using React (Vite) and communicates with the backend through REST APIs.
+The backend is developed using Node.js and Express, handling authentication, item management, and claim processing.
+MongoDB Atlas is used for persistent data storage.
+Cloudinary is used to store and serve uploaded images efficiently.
+JWT middleware secures protected routes and enforces user-level access control.
 
-- Student authentication using JWT
-- Protected dashboard for logged-in users
-- Add lost or found items with image upload support
-- Search and filter items across the platform
-- Authorization enforced so users can edit or delete only their own items
-- Claim found items via a contact form
-- Secure handling of credentials using environment variables
+Technology Stack
 
+Frontend
 
+React (Vite)
+JavaScript (ES Modules)
+CSS
 
-## 🧠 Project Architecture
+Backend
 
-The application follows a standard client–server architecture:
+Node.js
+Express.js
+MongoDB Atlas with Mongoose
+JWT Authentication
 
-- The **frontend** is built with React (Vite) and communicates with the backend via REST APIs.
-- The **backend** is developed using Node.js and Express, handling authentication, item management, and claims.
-- **MongoDB Atlas** is used for persistent data storage.
-- **Cloudinary** is used to store and serve uploaded images efficiently.
-- **JWT middleware** secures protected routes and enforces user access control.
+Supporting Tools and Libraries
 
+Cloudinary for image uploads
+Multer for handling multipart/form-data
+bcryptjs for password hashing
+dotenv for environment variable management
 
+Application Workflow
 
-## 🛠 Tech Stack
+A user logs in and receives a JWT token.
+The token is used to access protected routes such as the dashboard.
+Users can add lost or found items along with images.
+Images are uploaded to Cloudinary, and their URLs are stored in MongoDB.
+Other users can search for items and submit claims.
+Claims are stored in the database for further coordination between users.
 
-### Frontend
-- React (Vite)
-- JavaScript (ES Modules)
-- Basic CSS for styling
+Getting Started
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB Atlas (Mongoose)
-- JWT Authentication
+Prerequisites
 
-### Other Tools & Libraries
-- Cloudinary (image uploads)
-- Multer (multipart/form-data handling)
-- bcryptjs (password hashing)
-- dotenv (environment variable management)
+Node.js installed
+MongoDB Atlas account
+Cloudinary account
 
+Installation
 
+Clone the repository:
+git clone https://github.com/SahayaAngelS/campus-lost-found.git
 
-## 🔄 Application Flow
-
-1. User logs in and receives a JWT token.
-2. Token is used to access protected routes such as the dashboard.
-3. Users can add lost or found items along with images.
-4. Images are uploaded to Cloudinary and URLs are stored in MongoDB.
-5. Other users can search items and submit claims.
-6. Claims are saved in the database for review and user coordination.
-
-
-
-## ▶️ Getting Started
-
-### Prerequisites
-- Node.js installed
-- MongoDB Atlas account
-- Cloudinary account
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/SahayaAngelS/campus-lost-found.git
-   
-2.Start the backend server:
+Start the backend server:
 
 cd server
 npm install
 npm start
 
-3.Start the frontend:
+
+Start the frontend:
 
 cd client
 npm install
 npm run dev
 
-🔐 Demo Credentials
+Demo Credentials
+
 Email: student@test.com
 Password: 123456
 
-📌 Future Enhancements
-
+Future Enhancements
 
 Admin dashboard for claim verification
-
 Email notifications for item claims
-
-Improved UI/UX using a CSS framework
+Improved UI/UX using a modern CSS framework
